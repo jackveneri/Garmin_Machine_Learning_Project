@@ -1,10 +1,11 @@
 from garminconnect import Garmin
 import datetime
 import pandas as pd
+import os
 
 # Update with your own credentials
-username = "jackveneri@gmail.com"
-password = "Giacomo99"
+username = input("Insert your Garmin Connect username")
+password = input("insert your password")     #"Giacomo99"
 
 # Connect to the API
 try:
@@ -107,5 +108,9 @@ for column in ['heartRate', 'distance', 'speed', 'altitude']:
 print(df)
 
 # Save the DataFrame to CSV
-df.to_csv('C:/Users/giaco/python_scripts/Garmin_Machine_Learning_Project/Garmin_Data.csv',
-           index=True)
+current_directory = os.getcwd()
+
+# Construct the file path
+file_path = os.path.join(current_directory, 'Garmin_data.csv')
+df.to_csv(file_path, index=True)
+

@@ -1,0 +1,1 @@
+This a repository for me to learn using version control, programming good practices, and test some machine learning on my actvity data I retrieved from Garmin Connect. If you also have a Garmin feel free to test it for your convenience!

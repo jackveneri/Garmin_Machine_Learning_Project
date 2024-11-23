@@ -1,5 +1,5 @@
 import ast
-
+import os
 import numpy as np
 import pandas as pd
 
@@ -17,7 +17,11 @@ def replace_none_with_mean(values):
 
 
 # Load JSON file into a DataFrame
-df = pd.read_csv(r'C:\\Users\giaco\python_scripts\Garmin_Machine_Learning_Project\Garmin_Data.csv')
+current_directory = os.getcwd()
+
+# Construct the file path
+file_path = os.path.join(current_directory, 'Garmin_data.csv')
+df = pd.read_csv(file_path)
 
 # Display the DataFrame
 print(df.columns)
